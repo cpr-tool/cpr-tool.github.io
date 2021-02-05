@@ -93,36 +93,25 @@
 
         <div class="subheading mb-3">High Level Overview</div>
         <img src="img/workflow.jpg" style="width: 100%">
+
         <div class="subheading mb-3">Summary</div>
         Given the buggy program, a repair budget (time limit, iteration count), the fault location(s), a user specification, the language components for the synthesis, a failing test-case and optionally,
         a set of initial functional(passing) test cases, CPR generate a refined set of patches that are less over-fitting. The user specification defines the desired behavior of the repaired program
         (in addition to satisfying the given test cases). If initial tests are available, we assume that at least one failing test is available, which our method seeks to repair, apart from making sure
         that the user provided specification holds for all paths traversed via concolic exploration. Finally, CPR produces a ranked set of patches based on the explored input space.
+
       </div>
     </section>
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="tool">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="tool">
       <div class="w-100">
         <h2 class="mb-5">Tool</h2>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" style="margin-top: -50px">
         Implemented in Python and C, this github repository contains the source for CPR and the scripts for the data sets,
-        including test suites, that we used for our experiments.
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Dependencies</h3>
-            <br>
-            <ul>
-              <li> LLVM - 6.0
-              <li> Klee - Concolic Support Enabled
-              <li> Python - 3.6
-            </ul>
-
-          </div>
-
+        including test suites, that we used for our experiments. The implementation requires LLVM-6.0, Klee Symbolic Execution Engine (with extended support for concolic execution) and
+          Python-3.6.
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -130,7 +119,7 @@
             <h3 class="mb-0">Source Files</h3>
             <br>
             <p>
-              will be made openly available soon
+              will be made open-source soon
             </p>
 
           </div>
@@ -141,7 +130,7 @@
           <div class="resume-content">
             <h3 class="mb-0">Docker Image</h3>
             <br>
-              Docker images will be made available
+              Docker images will be made available for both the Tool and Experiments
         </div>
 
         </div>
@@ -154,11 +143,116 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="subjects">
       <div class="w-100">
+        <br>
         <h2 class="mb-5">Evaluation Subjects</h2>
         <div>
           <div class="resume-content">
-            TODO : FILL TABLE
+            We evaluate our implementation on several benchmarks to illustrate the capabilities of CPR. We make use of three benchmarks:
+            <ul>
+              <li>Security Vulnerabilities: ExtractFix</li>
+              <li>Logical Programs: SVCOMP </li>
+              <li>Test-Driven Repair: ManyBugs</li>
+            </ul>
           </div>
+          <br><br>
+          <table class="table">
+            <thead class="thead-dark">
+            <tr>
+              <th scope="col">Benchmark</th>
+              <th scope="col">Program</th>
+              <th scope="col">Repository</th>
+              <th scope="col">Benchmark</th>
+              <th scope="col">Program</th>
+              <th scope="col">Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>LibTIFF</td>
+              <td><a href="https://github.com/vadz/libtiff">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Insertion Sort</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-1.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>Binutils</td>
+              <td><a href="https://sourceware.org/git/binutils-gdb.git">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Linear Search</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_search.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>LibXML2</td>
+              <td><a href="https://gitlab.gnome.org/GNOME/libxml2">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>String</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-2.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>LibJPEG</td>
+              <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Eureka</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/eureka_01-1.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>Coreutils</td>
+              <td><a href="https://github.com/coreutils/coreutils">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Nested Loop</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops-crafted-1/nested_delay_notd2.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>Jasper</td>
+              <td><a href="https://github.com/mdadams/jasper">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Sum</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/sum04-1.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ExtractFix</th>
+              <td>FFMpeg</td>
+              <td><a href="https://github.com/FFmpeg/FFmpeg">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Bubble Sort</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/sorting_bubblesort_ground-2.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ManyBugs</th>
+              <td>LibTIFF</td>
+              <td><a href="https://github.com/vadz/libtiff">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Unique List</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/data_structures_set_multi_proc_ground-1.c">Link</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ManyBugs</th>
+              <td>PHP</td>
+              <td><a href="https://github.com/php/php-src">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Standard Array</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/standard_running-1.c">Link</a></td>
+            </tr>
+
+            <tr>
+              <th scope="row">ManyBugs</th>
+              <td>Wireshark</td>
+              <td><a href="https://github.com/wireshark/wireshark">Repo</a></td>
+              <th scope="row">SVCOMP</th>
+              <td>Recursive Addition</td>
+              <td><a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/recursive/Addition02.c">Link</a></td>
+            </tr>
+
+
+            </tbody>
+          </table>
+
         </div>
       </div>
     </section>
@@ -170,8 +264,16 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="evaluation">
       <div class="w-100">
         <h2 class="mb-5">Evaluation</h2>
-        TODO: Fill
+        We evaluate our implementation on several benchmarks to illustrate the capabilities of CPR. We make use of three benchmarks:
+        <ul>
+          <li>Security Vulnerabilities: ExtractFix</li>
+          <li>Logical Programs: SVCOMP </li>
+          <li>Test-Driven Repair: ManyBugs</li>
+        </ul>
+
+
       </div>
+
     </section>
 
     <hr class="m-0">
