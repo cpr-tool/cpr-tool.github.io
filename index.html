@@ -400,7 +400,34 @@
  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="apr">
       <div class="w-100">
         <h2 class="mb-5">Artifacts</h2>
-        TODO: FILL
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Subject </th>
+            <th>Patch</th>
+            <th>Developer Patch </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>libtiff-0661f81-ac6a583</td>
+            <td><pre><code class="language-diff"> --- a/libtiff/tif_dirwrite.c
++++ b/libtiff/tif_dirwrite.c
+@@ -343,7 +343,7 @@
+                  * in the previous steps as the "rawcc" data may well be
+                  * a previously read tile/strip in mixed read/write mode.
+ 		 */
+<code class="language-diff" style="color:red">-		if (tif->tif_rawcc > 0 && tif->tif_rawcc != orig_rawcc </code>
+<code class="language-diff" style="color:green">+		if ((tif->tif_rawcc > 0) </code>
+ 		    && (tif->tif_flags & TIFF_BEENWRITING) != 0
+ 		    && !TIFFFlushData1(tif))
+ 		{
+</code></pre></td>
+            <td> <a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
+          </tr>
+          </tbody>
+        </table>
+
       </div>
     </section>
 
