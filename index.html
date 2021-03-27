@@ -404,7 +404,13 @@
         files to re-run the experiments. The Docker environment consists of all dependencies for CPR, KLEE and other subjects in the benchmarks. For each experiment, we also
         provide the logs and other artifacts (i.e. generated patches, rankings) inside an archive named 'results.tar.gz'. 
         
-        You can access the replication package via Dockerhub at this <a href="https://hub.docker.com/repository/docker/rshariffdeen/cpr">link </a> (use the tag experiments-cpr), or download the source to build the image on your own using this link. 
+        You can access the replication package via Dockerhub at this <a href="https://hub.docker.com/repository/docker/rshariffdeen/cpr">link </a> (use the tag experiments-cpr)
+        
+        <pre><code>docker pull rshariffdeen/cpr:experiments-cpr</code></pre>
+ 		    <br>        
+        You can also download the source to build the image on your own using this link. 
+        <pre><code>docker build -t experiments-cpr . </code></pre>
+        <br>
         
         For readability, we further provide the list of patches and their details for each benchmark in the following pages  <br><br>
         <ul>
