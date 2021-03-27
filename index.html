@@ -389,9 +389,6 @@
             <td>164</td>
             <td style="font-weight:bold; color:green">63%</td>
           </tr>
-
-
-
           </tbody>
         </table>
 
@@ -403,36 +400,19 @@
  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="artifacts">
       <div class="w-100">
         <h2 class="mb-5">Artifacts</h2>
-        We list below the following artifacts for some of the experiment in our evaluation section of the paper; the developer patch for each test subject in
-        each benchmark, and the generated patch by our tool. <br><br>
-        <table class="table">
-          <thead>
-          <tr>
-            <th>Subject </th>
-            <th>Patch</th>
-            <th>Developer Patch </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>libtiff-0661f81-ac6a583</td>
-            <td><pre><code class="language-diff"> --- a/libtiff/tif_dirwrite.c
-+++ b/libtiff/tif_dirwrite.c
-@@ -343,7 +343,7 @@
-                  * in the previous steps as the "rawcc" data may well be
-                  * a previously read tile/strip in mixed read/write mode.
- 		 */
-<code class="language-diff" style="color:red">-		if (tif->tif_rawcc > 0 && tif->tif_rawcc != orig_rawcc </code>
-<code class="language-diff" style="color:green">+		if ((tif->tif_rawcc > 0) </code>
- 		    && (tif->tif_flags & TIFF_BEENWRITING) != 0
- 		    && !TIFFFlushData1(tif))
- 		{
-</code></pre></td>
-            <td> <a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
-          </tr>
-          </tbody>
-        </table>
-
+        We provide a replication package for our experiments with CPR on the selected benchmarks in a Docker container, which consists of setup scripts / configuration
+        files to re-run the experiments. The Docker environment consists of all dependencies for CPR, KLEE and other subjects in the benchmarks. For each experiment, we also
+        provide the logs and other artifacts (i.e. generated patches, rankings) inside an archive named 'results.tar.gz'. 
+        
+        You can access the replication package via Dockerhub at this <a href="https://hub.docker.com/repository/docker/rshariffdeen/cpr">link </a> (use the tag experiments-cpr), or download the source to build the image on your own using this link. 
+        
+        For readability, we further provide the list of patches and their details for each benchmark in the following pages  <br><br>
+        <ul>
+          <li><a href="extractfix.html"> Extract Fix Benchmark </a></li>
+           <li><a href="manybugs.html"> ManyBugs Benchmark </a></li>
+           <li><a href="svcomp.html"> SVCOMP Benchmark </a></li>
+          </u>
+        
       </div>
     </section>
 
