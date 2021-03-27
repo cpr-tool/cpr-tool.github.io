@@ -86,26 +86,26 @@
           <thead>
           <tr>
             <th>Subject </th>
+            <th>Error </th>
             <th>Patch</th>
-            <th>Developer Patch </th>
+            <th>Incorrect Source File</th>
+            <th>Correct Source File</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>libtiff-0661f81-ac6a583</td>
-            <td><pre><code class="language-diff"> --- a/libtiff/tif_dirwrite.c
-+++ b/libtiff/tif_dirwrite.c
-@@ -343,7 +343,7 @@
-                  * in the previous steps as the "rawcc" data may well be
-                  * a previously read tile/strip in mixed read/write mode.
- 		 */
-<code class="language-diff" style="color:red">-		if (tif->tif_rawcc > 0 && tif->tif_rawcc != orig_rawcc </code>
-<code class="language-diff" style="color:green">+		if ((tif->tif_rawcc > 0) </code>
- 		    && (tif->tif_flags & TIFF_BEENWRITING) != 0
- 		    && !TIFFFlushData1(tif))
- 		{
+            <td>Insertion Sort</td>
+            <td>Incorrect Logic</td>
+            <td><pre><code class="language-diff"> 
+             while((i>=0) && (v[i]>key)) {
+<code class="language-diff" style="color:red">-		if (i<2) </code>
+<code class="language-diff" style="color:green">+		if (1 == 1) </code>
+         v[i+1] = v[i];
+         i = i - 1;
+        }
 </code></pre></td>
-            <td> <a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-1.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-2.c">Source File</a></td>
           </tr>
           </tbody>
         </table>
