@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <title>CPR - Concolic Program Repair</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
+    <a class="navbar-brand js-scroll-trigger" href="./index.html#page-top">
+      <span class="d-block d-lg-none">CPR</span>
+      <span class="d-none d-lg-block">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="./index.html#overview">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="./index.html#workflow">Workflow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="./index.html#tool">Tool</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="./index.html#subjects">Benchmarks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="./index.html#results">Evaluation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="./index.html#artifacts">Artifacts</a>
+        </li>
+      </ul>
+    </div>
+    <a href="https://hub.docker.com/repository/docker/rshariffdeen/cpr"><img height="25" alt="Docker Pulls" src="https://img.shields.io/docker/pulls/rshariffdeen/cpr?style=plastic"></a>
+     &nbsp;&nbsp;
+    <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/rshariffdeen/cpr/archive/master.zip" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Download rshariffdeen/cpr on GitHub">Download</a>
+    &nbsp;&nbsp;
+    <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/rshariffdeen/cpr/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Fork rshariffdeen/cpr on GitHub">Fork</a>
+    &nbsp;&nbsp;
+    <!-- Place this tag where you want the button to render. -->
+<!-- <a class="github-button" href="https://github.com/sponsors/rshariffdeen" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Sponsor @rshariffdeen on GitHub">Sponsor</a>
+    &nbsp;&nbsp; -->
+    <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/rshariffdeen/cpr" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Star rshariffdeen/cpr on GitHub">Star</a>
+    
+  </nav>
+
+  <div class="container-fluid">
+
+    <hr class="m-0">
+ <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="artifacts">
+      <div class="w-100">
+        <h2 class="mb-5">Patches - ExtractFix Benchmark</h2>
+        We list below the following artifacts for some of the experiment in our evaluation section of the paper; the developer patch for each test subject in
+        each benchmark, and the generated patch by our tool. <br><br>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Subject </th>
+            <th>Patch</th>
+            <th>Developer Patch </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>libtiff-0661f81-ac6a583</td>
+            <td><pre><code class="language-diff"> --- a/libtiff/tif_dirwrite.c
++++ b/libtiff/tif_dirwrite.c
+@@ -343,7 +343,7 @@
+                  * in the previous steps as the "rawcc" data may well be
+                  * a previously read tile/strip in mixed read/write mode.
+ 		 */
+<code class="language-diff" style="color:red">-		if (tif->tif_rawcc > 0 && tif->tif_rawcc != orig_rawcc </code>
+<code class="language-diff" style="color:green">+		if ((tif->tif_rawcc > 0) </code>
+ 		    && (tif->tif_flags & TIFF_BEENWRITING) != 0
+ 		    && !TIFFFlushData1(tif))
+ 		{
+</code></pre></td>
+            <td> <a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
