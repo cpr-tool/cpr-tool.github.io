@@ -95,7 +95,7 @@
           <tbody>
           <tr>
             <td>Insertion Sort</td>
-            <td>Incorrect Logic</td>
+            <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
 while((i>=0) && (v[i]>key)) {
 <code class="language-diff" style="color:red">-  if (i<2) </code>
@@ -106,6 +106,21 @@ while((i>=0) && (v[i]>key)) {
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-1.c">Source File</a></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-2.c">Source File</a></td>
+          </tr>
+            
+            <tr>
+            <td>Linear Search</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+while (j<n && a[j]!=q) {
+    j++;
+<code class="language-diff" style="color:red">-  if (j == 20) </code>
+<code class="language-diff" style="color:green">+  if (1 == 0) </code>
+    j=-1;
+}            
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_search.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_sea.ch.c">Source File</a></td>
           </tr>
           </tbody>
         </table>
