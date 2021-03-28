@@ -230,6 +230,8 @@
             <td>CVE-2018-10372</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- if (!do_display) { </code>
+<code class="language-diff" style="color:green">+ if (!do_display) { if (limit <= (ph + num)) return 0;</code>
             </pre></td>
             <td><a href="https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=6aea08d">6aea08</a></td>
           </tr>
@@ -240,6 +242,7 @@
             <td>CVE-2017-15025</td>
             <td>Divide by Zero</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if(0 == lh.line_range) goto line_fail;</code> 
             </pre></td>
             <td><a href="https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=d8010d3">d8010d3</a></td>
           </tr>
