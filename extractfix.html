@@ -117,8 +117,8 @@
             <td>CVE-2014-8128</td>
             <td>Out of bound Write</td>
             <td><pre>
-<code class="language-diff" style="color:red">- while (err >= limit) {            
-<code class="language-diff" style="color:green">+ while (err >= limit && nrows == 256) {
+<code class="language-diff" style="color:red">- while (err >= limit) {</code>            
+<code class="language-diff" style="color:green">+ while (err >= limit && nrows == 256) {</code>
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/3206e0c">3206e0c</a></td>
           </tr>
@@ -129,8 +129,8 @@
             <td>CVE-2016-3186</td>
             <td>Buffer Overflow</td>
             <td><pre>
-<code class="language-diff" style="color:red">- while ((count = getc(infile)) && count <= 255)
-<code class="language-diff" style="color:green">+ while ((count = getc(infile)) && count <= 255 && x >= 0)
+<code class="language-diff" style="color:red">- while ((count = getc(infile)) && count <= 255)</code>
+<code class="language-diff" style="color:green">+ while ((count = getc(infile)) && count <= 255 && x >= 0)</code>
             </pre></td>
             <td><a href="https://bugzilla.redhat.com/attachment.cgi?id=1144235&action=diff">1144235</a></td>
           </tr>
@@ -141,7 +141,7 @@
             <td>CVE-2016-5314</td>
             <td>Buffer Overflow</td>
             <td><pre>
-<code class="language-diff" style="color:green">+ if (sp->tbuf_size < sp->stream.avail_out) return 0;
+<code class="language-diff" style="color:green">+ if (sp->tbuf_size < sp->stream.avail_out) return 0;</code>
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/391e77f">391e77f</a></td>
           </tr>
@@ -152,7 +152,7 @@
             <td>CVE-2016-9273</td>
             <td>Out of bound Read</td>
             <td><pre>
-<code class="language-diff" style="color:green">+ if (td->td_nstrips == 0) return td->td_nstrips;
+<code class="language-diff" style="color:green">+ if (td->td_nstrips == 0) return td->td_nstrips;</code>
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/d651abc">d651abc</a></td>
           </tr>
@@ -163,7 +163,7 @@
             <td>bugzilla 2633</td>
             <td>Buffer Overflow</td>
             <td><pre>
-<code class="language-diff" style="color:green">+ if (es <= 0) return;
+<code class="language-diff" style="color:green">+ if (es <= 0) return;</code>
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/5ed9fea">5ed9fea</a></td>
           </tr>
@@ -174,8 +174,8 @@
             <td>CVE-2016-10094</td>
             <td>Buffer Overflow</td>
             <td><pre>
-<code class="language-diff" style="color:red">- if (count >= 4) {
-<code class="language-diff" style="color:green">+ if (5 <= count) {
+<code class="language-diff" style="color:red">- if (count >= 4) {</code>
+<code class="language-diff" style="color:green">+ if (5 <= count) {</code>
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/c715336">c715336</a></td>
           </tr>
