@@ -174,6 +174,8 @@
             <td>CVE-2016-10094</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- if (count >= 4) {
+<code class="language-diff" style="color:green">+ if (5 <= count) {
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/c715336">c715336</a></td>
           </tr>
