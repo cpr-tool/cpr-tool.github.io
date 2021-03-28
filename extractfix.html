@@ -117,6 +117,8 @@
             <td>CVE-2014-8128</td>
             <td>Out of bound Write</td>
             <td><pre>
+<code class="language-diff" style="color:red">-      while (err >= limit) {            
+<code class="language-diff" style="color:green">+      while (err >= limit && nrows == 256) {
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/3206e0c">3206e0c</a></td>
           </tr>
