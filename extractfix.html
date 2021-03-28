@@ -87,7 +87,9 @@
         <table class="table">
           <thead>
           <tr>
-            <th>Subject </th>
+            <th>ID</th>
+	    <th>Subject</th>
+            <th>Bug Type</th>
             <th>Patch</th>
             <th>Developer Patch </th>
           </tr>
@@ -97,7 +99,9 @@
             
             
           <tr>
-            <td>Libtiff/CVE-2016-5321</td>
+            <td>1</td>
+	    <td>Libtiff/CVE-2016-5321</td>
+            <td>Out of bound Read</td>
             <td><pre><code class="language-diff">
             
 @@ -989,7 +989,7 @@ static int  readSeparateTilesIntoBuffer (TIFF* in, uint8 *obuf,
