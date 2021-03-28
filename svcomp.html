@@ -100,7 +100,7 @@
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
 while((i>=0) && (v[i]>key)) {
-<code class="language-diff" style="color:red">-  if (i<2) </code>
+<code class="language-diff" style="color:red">-  if (i < 2) </code>
 <code class="language-diff" style="color:green">+  if (1 == 1) </code>
    v[i+1] = v[i];
    i = i - 1;
@@ -132,8 +132,8 @@ while (j < n && a[j] ! =q) {
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
 
-<code class="language-diff" style="color:red">-  found = (j>nc_B-1)<<i;</code>
-<code class="language-diff" style="color:green">+  found = (j>nc_B-1) </code>
+<code class="language-diff" style="color:red">-  found = (j > nc_B - 1) << i;</code>
+<code class="language-diff" style="color:green">+  found = (j > nc_B - 1) </code>
   
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-2.c">Source File</a></td>
@@ -162,8 +162,8 @@ if(distance[x] > distance[y] + Weight[j])
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
 
-<code class="language-diff" style="color:red">-  else if(st==1 && last>=SIZE)  </code>
-<code class="language-diff" style="color:green">+  else if(st==1 && last<SIZE) </code>
+<code class="language-diff" style="color:red">-  else if(st == 1 && last >= SIZE)  </code>
+<code class="language-diff" style="color:green">+  else if(st == 1 && last < SIZE) </code>
     d++;
 
   
