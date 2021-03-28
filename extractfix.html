@@ -105,8 +105,8 @@
             <td>CVE-2016-5321</td>
             <td>Out of bound Read</td>
             <td><pre>
-          <code class="language-diff" style="color:red">-      for (s = 0; s < spp; s++)</code>
-          <code class="language-diff" style="color:green">+      for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
+<code class="language-diff" style="color:red">- for (s = 0; s < spp; s++)</code>
+<code class="language-diff" style="color:green">+ for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/d9783e4">d9783e4</a></td>
           </tr>
@@ -117,8 +117,8 @@
             <td>CVE-2014-8128</td>
             <td>Out of bound Write</td>
             <td><pre>
-<code class="language-diff" style="color:red">-      while (err >= limit) {            
-<code class="language-diff" style="color:green">+      while (err >= limit && nrows == 256) {
+<code class="language-diff" style="color:red">- while (err >= limit) {            
+<code class="language-diff" style="color:green">+ while (err >= limit && nrows == 256) {
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/3206e0c">3206e0c</a></td>
           </tr>
@@ -129,10 +129,12 @@
             <td>CVE-2016-3186</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- while ((count = getc(infile)) && count <= 255)
+<code class="language-diff" style="color:green">+ while ((count = getc(infile)) && count <= 255 && x >= 0)
             </pre></td>
             <td><a href="https://bugzilla.redhat.com/attachment.cgi?id=1144235&action=diff">1144235</a></td>
           </tr>
-          
+		    
           <tr>
             <td>4</td>
             <td>Libtiff</td>
