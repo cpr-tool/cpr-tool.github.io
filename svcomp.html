@@ -123,8 +123,7 @@ while (j < n && a[j] ! =q) {
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_sea.ch.c">Source File</a></td>
           </tr>
    
-    
-            <tr>
+        <tr>
             <td>String</td>
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
@@ -135,6 +134,22 @@ while (j < n && a[j] ! =q) {
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-2.c">Source File</a></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-1.c">Source File</a></td>
+          </tr>
+   
+    <tr>
+            <td>Eureka</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+if(distance[x] > distance[y] + Weight[j])
+{
+<code class="language-diff" style="color:red">-  distance[x] = -1;  </code>
+<code class="language-diff" style="color:green">+  distance[x] = distance[y] + Weight[j]; </code>
+}
+
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/eureka_01-1.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/eureka_01-2.c">Source File</a></td>
           </tr>
   
           </tbody>
