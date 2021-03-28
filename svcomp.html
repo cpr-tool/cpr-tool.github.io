@@ -122,6 +122,21 @@ while (j < n && a[j] ! =q) {
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_search.c">Source File</a></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_sea.ch.c">Source File</a></td>
           </tr>
+   
+    
+            <tr>
+            <td>String</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+
+<code class="language-diff" style="color:red">-  found = (j>nc_B-1)<<i;</code>
+<code class="language-diff" style="color:green">+  found = (j>nc_B-1) </code>
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-2.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-1.c">Source File</a></td>
+          </tr>
+  
           </tbody>
         </table>
 
