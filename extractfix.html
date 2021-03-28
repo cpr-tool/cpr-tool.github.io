@@ -88,7 +88,8 @@
           <thead>
           <tr>
             <th>ID</th>
-	    <th>Subject</th>
+	    <th>Project</th>
+ 	    <th>Bud ID</th>
             <th>Bug Type</th>
             <th>Patch</th>
             <th>Developer Patch </th>
@@ -99,18 +100,12 @@
             
           <tr>
             <td>1</td>
-	    <td>Libtiff/CVE-2016-5321</td>
+            <td>Libtiff</td>
+	    <td>CVE-2016-5321</td>
             <td>Out of bound Read</td>
             <td><pre><code class="language-diff">
-@@ -989,7 +989,7 @@ static int  readSeparateTilesIntoBuffer (TIFF* in, uint8 *obuf,
-    nrow = (row + tl > imagelength) ? imagelength - row : tl;
-    for (col = 0; col < imagewidth; col += tw)
-      {
 <code class="language-diff" style="color:red">-      for (s = 0; s < spp; s++)</code>
 <code class="language-diff" style="color:green">+      for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
-        {  /* Read each plane of a tile set into srcbuffs[s] */
-	tbytes = TIFFReadTile(in, srcbuffs[s], col, row, 0, s);
-        if (tbytes < 0  && !ignore)            
             </code></pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/d9783e4">d9783e4</a></td>
           </tr>
