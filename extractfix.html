@@ -242,7 +242,7 @@
             <td>CVE-2017-15025</td>
             <td>Divide by Zero</td>
             <td><pre>
-<code class="language-diff" style="color:green">+ if(0 == lh.line_range) goto line_fail;</code> 
+<code class="language-diff" style="color:green">+ if(0 == lh.line_range) goto line_fail;</code>
             </pre></td>
             <td><a href="https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=d8010d3">d8010d3</a></td>
           </tr>
@@ -253,6 +253,7 @@
             <td>CVE-2016-1834</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (size < 0) return(NULL);</code>
             </pre></td>
             <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/8fbbf5513d609c1770b391b99e33314cd0742704">8fbbf551</a></td>
           </tr>
@@ -263,6 +264,8 @@
             <td>CVE-2016-1838</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- if ((tlen > 0) && (xmlStrncmp(ctxt->input->cur, ctxt->name, tlen) == 0)) {</code>
+<code class="language-diff" style="color:green">+ if ((tlen > 0) && (tlen <= curLength) && (xmlStrncmp(ctxt->input->cur, ctxt->name, tlen) == 0)) {</code>
             </pre></td>
             <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/db07dd6">db07dd6</a></td>
           </tr>
