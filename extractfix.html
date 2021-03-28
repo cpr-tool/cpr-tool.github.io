@@ -71,7 +71,7 @@
     &nbsp;&nbsp; -->
     <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/rshariffdeen/cpr" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Star rshariffdeen/cpr on GitHub">Star</a>
-    
+
   </nav>
 
   <div class="container-fluid">
@@ -91,14 +91,14 @@
             <th>ID</th>
 	    <th>Project</th>
  	    <th>Bug ID</th>
-            <th>Error Type</th>
+            <th>Bug Type</th>
             <th>Generated Patch</th>
             <th>Developer Patch </th>
           </tr>
           </thead>
-		
           <tbody>
-            
+
+
           <tr>
             <td>1</td>
             <td>Libtiff</td>
@@ -223,27 +223,199 @@
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/43bc25">43bc25</a></td>
           </tr>
-            
-            
-<!--          <tr>
-            <td>libtiff-0661f81-ac6a583</td>
-            <td><pre><code class="language-diff">
-            
---- a/libtiff/tif_dirwrite.c
-+++ b/libtiff/tif_dirwrite.c
-@@ -343,7 +343,7 @@
-                  * in the previous steps as the "rawcc" data may well be
-                  * a previously read tile/strip in mixed read/write mode.
- 		 */
-<code class="language-diff" style="color:red">-		if (tif->tif_rawcc > 0 && tif->tif_rawcc != orig_rawcc </code>
-<code class="language-diff" style="color:green">+		if ((tif->tif_rawcc > 0) </code>
- 		    && (tif->tif_flags & TIFF_BEENWRITING) != 0
- 		    && !TIFFFlushData1(tif))
- 		{
-            </code></pre></td>
-            <td><a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
+
+          <tr>
+            <td>12</td>
+            <td>Binutils</td>
+            <td>CVE-2018-10372</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=6aea08d">6aea08</a></td>
           </tr>
--->                  
+
+          <tr>
+            <td>13</td>
+            <td>Binutils</td>
+            <td>CVE-2017-15025</td>
+            <td>Divide by Zero</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=d8010d3">d8010d3</a></td>
+          </tr>
+
+          <tr>
+            <td>14</td>
+            <td>Libxml2</td>
+            <td>CVE-2016-1834</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/8fbbf5513d609c1770b391b99e33314cd0742704">8fbbf551</a></td>
+          </tr>
+
+          <tr>
+            <td>15</td>
+            <td>Libxml2</td>
+            <td>CVE-2016-1838</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/db07dd6">db07dd6</a></td>
+          </tr>
+
+          <tr>
+            <td>16</td>
+            <td>Libxml2</td>
+            <td>CVE-2016-1839</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/a820dbe">a820dbe</a></td>
+          </tr>
+
+          <tr>
+            <td>17</td>
+            <td>Libxml2</td>
+            <td>CVE-2012-5134</td>
+            <td>Buffer Underflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/6a36fbe">6a36fbe</a></td>
+          </tr>
+
+          <tr>
+            <td>18</td>
+            <td>Libxml2</td>
+            <td>CVE-2017-5969</td>
+            <td>Null Pointer Dereference</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/94691dc8">94691dc8</a></td>
+          </tr>
+
+          <tr>
+            <td>19</td>
+            <td>Libjpeg</td>
+            <td>CVE-2018-14498</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/cbe01e0c6757c918a220a63ce614fe77260a7a03">cbe01e</a></td>
+          </tr>
+
+          <tr>
+            <td>20</td>
+            <td>Libjpeg</td>
+            <td>CVE-2018-19664</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/f8cca819a4fb42aafa5f70df43c45e8c416d716f">f8cca81</a></td>
+          </tr>
+
+          <tr>
+            <td>21</td>
+            <td>Libjpeg</td>
+            <td>CVE-2017-15232</td>
+            <td>Null Pointer Dereference</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/1ecd9a5">1ecd9a5</a></td>
+          </tr>
+
+          <tr>
+            <td>22</td>
+            <td>Libjpeg</td>
+            <td>CVE-2012-2806</td>
+            <td>Null Pointer Dereference</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/dd2b651">dd2b651</a></td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+            <td>FFmpeg</td>
+            <td>CVE-2017-9992</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+-
+            </pre></td>
+            <td><a href="https://github.com/FFmpeg/FFmpeg/commit/f52fbf4f3ed02a7d872d8a102006f29b4421f360">f52fbf4</a></td>
+          </tr>
+
+          <tr>
+            <td>24</td>
+            <td>FFmpeg</td>
+            <td>Bugzilla-1404</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+-
+            </pre></td>
+            <td><a href="https://github.com/FFmpeg/FFmpeg/commit/279420b5a63b3f254e4932a4afb91759fb50186a">279420b</a></td>
+          </tr>
+
+          <tr>
+            <td>25</td>
+            <td>Jasper</td>
+            <td>CVE-2016-8691</td>
+            <td>Divide by Zero</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/mdadams/jasper/commit/d8c2604cd438c41ec72aff52c16ebd8183068020">d8c2604</a></td>
+          </tr>
+
+          <tr>
+            <td>26</td>
+            <td>Jasper</td>
+            <td>CVE-2016-9387</td>
+            <td>Integer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/mdadams/jasper/commit/d91198abd00fc435a397fe6bad906a4c1748e9cf">d91198a</a></td>
+          </tr>
+
+          <tr>
+            <td>27</td>
+            <td>Coreutils</td>
+            <td>Bugzilla 26545</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/coreutils/coreutils/commit/f4570a9e">f4570a</a></td>
+          </tr>
+
+          <tr>
+            <td>28</td>
+            <td>Coreutils</td>
+            <td>GNUBug 25003</td>
+            <td>Invalid Memory Reference</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/coreutils/coreutils/commit/4954f79">4954f79</a></td>
+          </tr>
+
+          <tr>
+            <td>29</td>
+            <td>Coreutils</td>
+            <td>GNUBug 25023</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/coreutils/coreutils/commit/d91aee">d91aee</a></td>
+          </tr>
+
+          <tr>
+            <td>30</td>
+            <td>Coreutils</td>
+            <td>Bugzilla 19784</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/coreutils/coreutils/commit/1d0f1b7">1d0f1b7</a></td>
+          </tr>
+
           </tbody>
         </table>
 
