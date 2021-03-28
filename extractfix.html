@@ -89,9 +89,9 @@
           <thead>
           <tr>
             <th>ID</th>
-	    <th>Project</th>
- 	    <th>Bug ID</th>
-            <th>Bug Type</th>
+	          <th>Project</th>
+ 	          <th>Bug ID</th>
+            <th>Error Type</th>
             <th>Generated Patch</th>
             <th>Developer Patch </th>
           </tr>
@@ -276,6 +276,7 @@
             <td>CVE-2016-1839</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if ((ctxt->input->cur - ctxt->input->base) < len) return(NULL);</code>
             </pre></td>
             <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/a820dbe">a820dbe</a></td>
           </tr>
@@ -286,6 +287,8 @@
             <td>CVE-2012-5134</td>
             <td>Buffer Underflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- while (buf[len - 1] == 0x20) len--;</code>
+<code class="language-diff" style="color:green">+ while ((len > 0) && (buf[len - 1] == 0x20) len--;</code>
             </pre></td>
             <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/6a36fbe">6a36fbe</a></td>
           </tr>
