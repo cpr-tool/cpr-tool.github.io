@@ -152,6 +152,7 @@
             <td>CVE-2016-9273</td>
             <td>Out of bound Read</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (td->td_nstrips == 0) return td->td_nstrips;
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/d651abc">d651abc</a></td>
           </tr>
@@ -162,6 +163,7 @@
             <td>bugzilla 2633</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (es <= 0) return;
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/5ed9fea">5ed9fea</a></td>
           </tr>
