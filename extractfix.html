@@ -103,10 +103,10 @@
             <td>Libtiff</td>
 	    <td>CVE-2016-5321</td>
             <td>Out of bound Read</td>
-            <td><pre><code class="language-diff">
+            <td><pre>
 <code class="language-diff" style="color:red">-      for (s = 0; s < spp; s++)</code>
 <code class="language-diff" style="color:green">+      for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
-            </code></pre></td>
+	    </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/d9783e4">d9783e4</a></td>
           </tr>
             
