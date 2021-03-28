@@ -102,13 +102,113 @@
           <tr>
             <td>1</td>
             <td>Libtiff</td>
-	    <td>CVE-2016-5321</td>
+            <td>CVE-2016-5321</td>
             <td>Out of bound Read</td>
             <td><pre>
-<code class="language-diff" style="color:red">-      for (s = 0; s < spp; s++)</code>
-<code class="language-diff" style="color:green">+      for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
-	    </pre></td>
+          <code class="language-diff" style="color:red">-      for (s = 0; s < spp; s++)</code>
+          <code class="language-diff" style="color:green">+      for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
+            </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/d9783e4">d9783e4</a></td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>Libtiff</td>
+            <td>CVE-2014-8128</td>
+            <td>Out of bound Write</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/3206e0c">3206e0c</a></td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>Libtiff</td>
+            <td>CVE-2016-3186</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://bugzilla.redhat.com/attachment.cgi?id=1144235&action=diff">1144235</a></td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>Libtiff</td>
+            <td>CVE-2016-5314</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/391e77f">391e77f</a></td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>Libtiff</td>
+            <td>CVE-2016-9273</td>
+            <td>Out of bound Read</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/d651abc">d651abc</a></td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>Libtiff</td>
+            <td>bugzilla 2633</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/5ed9fea">5ed9fea</a></td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>Libtiff</td>
+            <td>CVE-2016-10094</td>
+            <td>Buffer Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/c715336">c715336</a></td>
+          </tr>
+          
+          <tr>
+            <td>8</td>
+            <td>Libtiff</td>
+            <td>CVE-2017-7601</td>
+            <td>Shift Overflow</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/0a76a8">0a76a8</a></td>
+          </tr>
+          
+          <tr>
+            <td>9</td>
+            <td>Libtiff</td>
+            <td>CVE-2016-3623</td>
+            <td>Divide by Zero</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/bd024f0">bd024f0</a></td>
+          </tr>
+          
+          <tr>
+            <td>10</td>
+            <td>Libtiff</td>
+            <td>CVE-2017-7595</td>
+            <td>Divide by Zero</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/47f2fb6">47f2fb6</a></td>
+          </tr>
+          
+          <tr>
+            <td>11</td>
+            <td>Libtiff</td>
+            <td>bugzilla 2611</td>
+            <td>Divide by Zero</td>
+            <td><pre>
+            </pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/43bc25">43bc25</a></td>
           </tr>
             
             
