@@ -82,6 +82,7 @@
         <h2 class="mb-5">Patches - ExtractFix Benchmark</h2>
         We list below the following artifacts for some of the experiment in our evaluation section of the paper; the developer patch for each test subject in
         each benchmark, and the generated patch by our tool. <br><br>
+
         <table class="table">
           <thead>
           <tr>
@@ -90,10 +91,33 @@
             <th>Developer Patch </th>
           </tr>
           </thead>
+          
           <tbody>
+            
+            
+          <tr>
+            <td>Libtiff/CVE-2016-5321</td>
+            <td><pre><code class="language-diff">
+            
+@@ -989,7 +989,7 @@ static int  readSeparateTilesIntoBuffer (TIFF* in, uint8 *obuf,
+    nrow = (row + tl > imagelength) ? imagelength - row : tl;
+    for (col = 0; col < imagewidth; col += tw)
+      {
+<code class="language-diff" style="color:red">-      for (s = 0; s < spp; s++)</code>
+<code class="language-diff" style="color:green">+      for (s = 0; s < spp && s < MAX_SAMPLES; s++)</code>
+        {  /* Read each plane of a tile set into srcbuffs[s] */
+	tbytes = TIFFReadTile(in, srcbuffs[s], col, row, 0, s);
+        if (tbytes < 0  && !ignore)            
+            </code></pre></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/d9783e4">d9783e4</a></td>
+          </tr>
+            
+            
           <tr>
             <td>libtiff-0661f81-ac6a583</td>
-            <td><pre><code class="language-diff"> --- a/libtiff/tif_dirwrite.c
+            <td><pre><code class="language-diff">
+            
+--- a/libtiff/tif_dirwrite.c
 +++ b/libtiff/tif_dirwrite.c
 @@ -343,7 +343,7 @@
                   * in the previous steps as the "rawcc" data may well be
@@ -104,9 +128,13 @@
  		    && (tif->tif_flags & TIFF_BEENWRITING) != 0
  		    && !TIFFFlushData1(tif))
  		{
-</code></pre></td>
-            <td> <a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
+            </code></pre></td>
+            <td><a href="http://git.ghostscript.com/?p=user/chrisl/libtiff.git;a=commit;h=0661f81">0661f81</a></td>
           </tr>
+            
+            
+            
+            
           </tbody>
         </table>
 
