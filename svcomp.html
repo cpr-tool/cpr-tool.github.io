@@ -100,12 +100,10 @@
             <td>Insertion Sort</td>
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
-while((i>=0) && (v[i]>key)) {
+
 <code class="language-diff" style="color:red">-  if (i < 2) </code>
 <code class="language-diff" style="color:green">+  if (1 == 1) </code>
-   v[i+1] = v[i];
-   i = i - 1;
-}
+
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-1.c">Source File</a></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/insertion_sort-2.c">Source File</a></td>
@@ -116,12 +114,9 @@ while((i>=0) && (v[i]>key)) {
             <td>Linear Search</td>
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
-while (j < n && a[j] ! =q) {
-    j++;
 <code class="language-diff" style="color:red">-  if (j == 20) </code>
 <code class="language-diff" style="color:green">+  if (1 == 0) </code>
-    j=-1;
-}            
+         
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_search.c">Source File</a></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/linear_sea.ch.c">Source File</a></td>
@@ -134,7 +129,7 @@ while (j < n && a[j] ! =q) {
             <td><pre><code class="language-diff"> 
 
 <code class="language-diff" style="color:red">-  found = (j > nc_B - 1) << i;</code>
-<code class="language-diff" style="color:green">+  found = (j > nc_B - 1) </code>
+<code class="language-diff" style="color:green">+  found = (j > nc_B - 1); </code>
   
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/string-2.c">Source File</a></td>
@@ -146,12 +141,9 @@ while (j < n && a[j] ! =q) {
             <td>Eureka</td>
             <td>Assertion Failure</td>
             <td><pre><code class="language-diff"> 
-if(distance[x] > distance[y] + Weight[j])
-{
+            
 <code class="language-diff" style="color:red">-  distance[x] = -1;  </code>
 <code class="language-diff" style="color:green">+  distance[x] = distance[y] + Weight[j]; </code>
-}
-
   
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/eureka_01-1.c">Source File</a></td>
@@ -165,15 +157,80 @@ if(distance[x] > distance[y] + Weight[j])
 
 <code class="language-diff" style="color:red">-  else if(st == 1 && last >= SIZE)  </code>
 <code class="language-diff" style="color:green">+  else if(st == 1 && last < SIZE) </code>
-    d++;
-
   
 </code></pre></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops-crafted-1/nested_delay_notd2.c">Source File</a></td>
             <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops-crafted-1/nested_delay_nd.c">Source File</a></td>
           </tr>
+    <tr>
+       <td> 6 </td>
+            <td>Sum</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+
+<code class="language-diff" style="color:red">-  if (i < 4)  </code>
+<code class="language-diff" style="color:green">+  if ( i == i) </code>
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/sum04-1.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/loops/sum04-2.c">Source File</a></td>
+          </tr>
+            
+       <tr>
+       <td> 7 </td>
+            <td>Bubble Sort</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+
+<code class="language-diff" style="color:red">-  if ( a[i - 1] < a[i] ) {  </code>
+<code class="language-diff" style="color:green">+  if ( a[i - 1] > a[i] ) { </code>
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/sorting_bubblesort_ground-2.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/sorting_bubblesort_ground-1.c">Source File</a></td>
+          </tr>
    
-   
+              <tr>
+            <td> 8 </td>
+            <td>Unique List</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+
+<code class="language-diff" style="color:red">-  if ( set[ i ] == value ) return 0;  </code>
+<code class="language-diff" style="color:green">+  if ( set[ i ] == value ) return size; </code>
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/sorting_bubblesort_ground-2.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/sorting_bubblesort_ground-1.c">Source File</a></td>
+          </tr>
+            
+            <tr>
+            <td> 9 </td>
+            <td>Standard Run</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+
+<code class="language-diff" style="color:red">-  if ( a[i] < 0 && !b[i] ) f = 0;  </code>
+<code class="language-diff" style="color:green">+  if ( a[i] < 0 && b[i] ) f = 0; </code>
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/standard_running-1.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/array-examples/standard_running-2.c">Source File</a></td>
+          </tr>
+              
+            <tr>
+            <td> 10 </td>
+            <td>Recursive Addition</td>
+            <td>Assertion Failure</td>
+            <td><pre><code class="language-diff"> 
+
+<code class="language-diff" style="color:red">-  if (result == m - n) {  </code>
+<code class="language-diff" style="color:green">+  if (result == m + n) { </code>
+  
+</code></pre></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/recursive/Addition02.c">Source File</a></td>
+            <td> <a href="https://github.com/sosy-lab/sv-benchmarks/blob/master/c/recursive/Addition01-2.c">Source File</a></td>
+          </tr>
   
           </tbody>
         </table>
