@@ -299,6 +299,7 @@
             <td>CVE-2017-5969</td>
             <td>Null Pointer Dereference</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (0 == content->c2) break;</code>
             </pre></td>
             <td><a href="https://gitlab.gnome.org/GNOME/libxml2/commit/94691dc8">94691dc8</a></td>
           </tr>
@@ -309,6 +310,7 @@
             <td>CVE-2018-14498</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (source->cmap_length <= t) exit(1);</code>
             </pre></td>
             <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/cbe01e0c6757c918a220a63ce614fe77260a7a03">cbe01e</a></td>
           </tr>
@@ -319,6 +321,8 @@
             <td>CVE-2018-19664</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- } else if (cinfo->out_color_space == JCS_RGB565 || cinfo->out_color_space == JCS_CMYK) {</code>
+<code class="language-diff" style="color:green">+ } else if ((1 != cinfo->quantize_colors) && (cinfo->out_color_space == JCS_RGB565 || cinfo->out_color_space == JCS_CMYK)) {</code>
             </pre></td>
             <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/f8cca819a4fb42aafa5f70df43c45e8c416d716f">f8cca81</a></td>
           </tr>
@@ -329,6 +333,7 @@
             <td>CVE-2017-15232</td>
             <td>Null Pointer Dereference</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if ((0 < num_rows) && (0 == output_buf)) ERREXIT(cinfo, JERR_BAD_STATE);</code>
             </pre></td>
             <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/1ecd9a5">1ecd9a5</a></td>
           </tr>
@@ -339,6 +344,8 @@
             <td>CVE-2012-2806</td>
             <td>Null Pointer Dereference</td>
             <td><pre>
+<code class="language-diff" style="color:red">- for (i = 0; i < cinfo->num_components; i++)</code>
+<code class="language-diff" style="color:green">+ for (i = 0; i < cinfo->num_components && i < MAX_COMPS_IN_SCAN); i++)</code>
             </pre></td>
             <td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/commit/dd2b651">dd2b651</a></td>
           </tr>
@@ -371,6 +378,7 @@
             <td>CVE-2016-8691</td>
             <td>Divide by Zero</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (0 == siz->comps[i].hsamp) return -1;</code>
             </pre></td>
             <td><a href="https://github.com/mdadams/jasper/commit/d8c2604cd438c41ec72aff52c16ebd8183068020">d8c2604</a></td>
           </tr>
@@ -381,6 +389,7 @@
             <td>CVE-2016-9387</td>
             <td>Integer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (dec->yend == dec->yend) return -1;</code>
             </pre></td>
             <td><a href="https://github.com/mdadams/jasper/commit/d91198abd00fc435a397fe6bad906a4c1748e9cf">d91198a</a></td>
           </tr>
@@ -391,6 +400,8 @@
             <td>Bugzilla 26545</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- for (i = 3; i < size / 2; i *= 2)</code>
+<code class="language-diff" style="color:green">+ for (i = 3; i <= size / 2; i *= 2)</code>
             </pre></td>
             <td><a href="https://github.com/coreutils/coreutils/commit/f4570a9e">f4570a</a></td>
           </tr>
@@ -401,6 +412,8 @@
             <td>GNUBug 25003</td>
             <td>Invalid Memory Reference</td>
             <td><pre>
+<code class="language-diff" style="color:red">- if (initial_read != SIZE_MAX || start < initial_read)</code>
+<code class="language-diff" style="color:green">+ if (start < initial_read)</code>
             </pre></td>
             <td><a href="https://github.com/coreutils/coreutils/commit/4954f79">4954f79</a></td>
           </tr>
@@ -411,6 +424,8 @@
             <td>GNUBug 25023</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- else if (!join_lines && *col_sep_string == '\t')</code>
+<code class="language-diff" style="color:green">+ else if (!join_lines && *col_sep_string == '\t' && (1 == col_sep_length))</code>
             </pre></td>
             <td><a href="https://github.com/coreutils/coreutils/commit/d91aee">d91aee</a></td>
           </tr>
@@ -421,6 +436,8 @@
             <td>Bugzilla 19784</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:red">- while (i < size && sieve[++i] == 0)</code>
+<code class="language-diff" style="color:green">+ while((i < (-1 + size)) && sieve[++i] == 0)</code>
             </pre></td>
             <td><a href="https://github.com/coreutils/coreutils/commit/1d0f1b7">1d0f1b7</a></td>
           </tr>
