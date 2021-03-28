@@ -141,6 +141,7 @@
             <td>CVE-2016-5314</td>
             <td>Buffer Overflow</td>
             <td><pre>
+<code class="language-diff" style="color:green">+ if (sp->tbuf_size < sp->stream.avail_out) return 0;
             </pre></td>
             <td><a href="https://github.com/vadz/libtiff/commit/391e77f">391e77f</a></td>
           </tr>
