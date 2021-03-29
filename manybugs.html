@@ -105,7 +105,7 @@
 <code class="language-diff" style="color:red">- if (!dir->tdir_count || !w || (tsize_t)dir->tdir_count / w != cc)</code>
 <code class="language-diff" style="color:green">+ if ((tsize_t)dir->tdir_count != (tsize_t)dir->tdir_count)</code>
             </pre></td>
-            <td><a href="">ee65c74</a></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/eec4c06">eec4c06</a></td>
           </tr>
 
           <tr>
@@ -119,7 +119,7 @@
   && (tif->tif_flags & TIFF_BEENWRITING) != 0
   && !TIFFFlushData1(tif))
             </pre></td>
-            <td><a href="">865f7b2</a></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/371336d">371336d</a></td>
           </tr>
 
           <tr>
@@ -131,7 +131,7 @@
 <code class="language-diff" style="color:red">- tif->tif_fields = NULL;</code>
 <code class="language-diff" style="color:green">+ tif->tif_fields = tif->tif_fields;</code>
             </pre></td>
-            <td><a href="">7d6e298</a></td>
+            <td><a href="https://github.com/vadz/libtiff/commit/7d6e298">7d6e298</a></td>
           </tr>
 
           <tr>
@@ -143,7 +143,7 @@
 <code class="language-diff" style="color:red">- if ((z_len == 0 && !decompress) || z_len > MAX_SUFFIX) {</code>
 <code class="language-diff" style="color:green">+ if ((MAX_SUFFIX < z_len) || (0 == z_len)) {</code>
             </pre></td>
-            <td><a href="">884ef6d16c</a></td>
+            <td><a href="https://git.savannah.gnu.org/cgit/gzip.git/commit/?id=884ef6d16c">884ef6d16c</a></td>
           </tr>
 
           <tr>
@@ -154,7 +154,7 @@
             <td><pre>
 <code class="language-diff" style="color:green">+ ifd = 0; </code>
             </pre></td>
-            <td><a href="">f17cbd13a1</a></td>
+            <td><a href="https://git.savannah.gnu.org/cgit/gzip.git/commit/?id=f17cbd13a1">f17cbd13a1</a></td>
           </tr>
 
           </tbody>
