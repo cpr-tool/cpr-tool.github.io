@@ -89,19 +89,14 @@
         <div class="subheading mb-5">Automated Program Repair, Program Synthesis, Symbolic Execution
         </div>
         <p class="lead mb-5">
-           <img src="img/Idea.jpg" style="display:inline; height:">
+           <img src="img/Idea.jpg" style="display: table-cell;float: left;">
           Automated program repair reduces the manual effort in fixing program errors. However, existing repair techniques modify a buggy program such that it passes given tests.
           Such repair techniques do not discriminate between correct patches and patches that overfit the available tests and break untested but desired functionality. We attempt to solve this problem
           with a novel solution that make use of the duality of space exploration in Input Space and Program Space. We implemented our technique in the form of a tool called CPR and evaluated its efficacy
           in reducing the patch space by discarding overfitting patches from a pool of plausible patches. Similar to Cardio-Pulmonary Resuscitation (CPR) does to a patient, our tool CPR resuscitate
-          or recover programs via appropriate fixes.
-
-          <br><br>
-          In this work, we therefore propose and implement an integrated approach for detecting and discarding overfitting patches by exploiting the relationship between the patch space and input space.
+          or recover programs via appropriate fixes. In this work, we therefore propose and implement an integrated approach for detecting and discarding overfitting patches by exploiting the relationship between the patch space and input space.
           We leverage concolic path exploration to systematically traverse the input space (and generate inputs), while systematically ruling out significant parts of the patch space.
           Given a long enough time budget, this approach allows a significant reduction in the pool of patch candidates, as shown by our experiments.
-
-
         </p>
 
       </div>
