@@ -110,12 +110,10 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="workflow">
       <div class="w-100">
-        <h2 class="mb-5">Approach</h2>
-
-        <div class="subheading mb-3">High Level Overview</div>
+        <br><br>
+        <h2 class="mb-5">Approach</h2>    
         <img src="img/workflow.jpg" style="width: 100%">
-
-        <div class="subheading mb-3">Summary</div>
+        <br><br>
         Given the buggy program, a repair budget (time limit, iteration count), the fault location(s), a user specification, the language components for the synthesis, a failing test-case and optionally,
         a set of initial functional(passing) test cases, CPR generate a refined set of patches that are less over-fitting. The user specification defines the desired behavior of the repaired program
         (in addition to satisfying the given test cases). If initial tests are available, we assume that at least one failing test is available, which our method seeks to repair, apart from making sure
@@ -164,7 +162,7 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="subjects">
       <div class="w-100">
-        <br>
+        <br><br>
         <h2 class="mb-5">Evaluation Subjects</h2>
         <div>
           <div class="resume-content">
@@ -294,6 +292,7 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="results">
       <div class="w-100">
+        <br><br>
         <h2 class="mb-5">Evaluation Results</h2>
         We evaluate CPR on three benchmarks for repairing security vulnerabilities, logical errors and test-failures.
         We analyse the reduction ratio of the input space in terms of the number of paths we discard due to infeasibility and
@@ -412,6 +411,7 @@
     <hr class="m-0">
  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="artifacts">
       <div class="w-100">
+        <br><br>
         <h2 class="mb-5">Artifacts</h2>
         We provide a replication package for our experiments with CPR on the selected benchmarks in a Docker container, which consists of setup scripts/configuration
         files to re-run the experiments. The Docker environment consists of all dependencies for CPR, KLEE, and other subjects in the benchmarks. For each experiment, we also
